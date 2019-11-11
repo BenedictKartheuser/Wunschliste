@@ -11,6 +11,6 @@ Seite 3: Hilfe Seite
 
 Seite 4: Login Seite
 
-Tim Eberitzsch
+Tim Eberitzsch aka the Flash
 Janik Rapp
 Benedict Kartheuser
