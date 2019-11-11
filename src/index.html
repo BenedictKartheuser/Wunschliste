@@ -1,89 +1,123 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Aufgabe: Meine App</title>
-        <link rel="shortcut icon" href="favicon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<head>
+    <meta charset="utf-8"/>
+    <title>Aufgabe: Meine App</title>
+    <link rel="shortcut icon" href="favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
 
-        <!-- Klasse App: Steuert die gesamte Anwendung -->
-        <script src="app.js"></script>
-        <link rel="stylesheet" href="app.css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
 
-        <!-- Klasse Database: Verwaltet die Daten der Anwendung -->
-        <script src="database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
 
-        <!-- TODO: Klasse App ausprogrammieren -->
-        <!-- TODO: Klasse PageNotFound anlegen und ausprogrammieren -->
-        <!-- TODO: Klasse PageOverview zu Ende programmieren -->
-        <!-- TODO: Klasse PageDetail zu Ende programmieren -->
-        <script src="page-overview/page-overview.js"></script>
-        <script src="page-detail/page-detail.js"></script>
-        <script src="page-not-found/page-not-found.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDCN9B8__bNcwa4svqJ3jxd1aqSTxyzZAw",
+            authDomain: "wunschliste-f5526.firebaseapp.com",
+            databaseURL: "https://wunschliste-f5526.firebaseio.com",
+            projectId: "wunschliste-f5526",
+            storageBucket: "wunschliste-f5526.appspot.com",
+            messagingSenderId: "101191923300",
+            appId: "1:101191923300:web:bcbce78d4ea1b7cb4a5171",
+            measurementId: "G-MPBZKMKM93"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore();
+    </script>
 
-        <!-- Fontello Icon Font (generiert auf fontello.com) -->
-        <link rel="stylesheet" href="fontello/css/fontello.css" />
+    <!-- Klasse App: Steuert die gesamte Anwendung -->
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css"/>
 
-        <!-- Stylesheets zur Gestaltung einzelner HTML-Elemente -->
-        <link rel="stylesheet" href="elements/button.css" />
-        <link rel="stylesheet" href="elements/tab-buttons.css" />
-        <link rel="stylesheet" href="elements/form.css" />
+    <!-- Klasse Database: Verwaltet die Daten der Anwendung -->
+    <script src="database.js"></script>
 
-        <script>
-            window.addEventListener("load", () => {
-                let app = new App();
-                app.run();
-            });
-        </script>
+    <!-- TODO: Klasse App ausprogrammieren -->
+    <!-- TODO: Klasse PageNotFound anlegen und ausprogrammieren -->
+    <!-- TODO: Klasse PageOverview zu Ende programmieren -->
+    <!-- TODO: Klasse PageDetail zu Ende programmieren -->
+    <script src="page-overview/page-overview.js"></script>
+    <script src="page-detail/page-detail.js"></script>
+    <script src="page-not-found/page-not-found.js"></script>
 
-        <!-- Dynamisch nachgeladene Stylesheets der App-Unterseiten -->
-        <style id="page-css"></style>
-    </head>
-    <body>
-        <!-- Kopfbereich der App -->
-        <header>
-            <nav>
-                <!-- Logo, Zurück-Button und Titel der Seite -->
+    <!-- Fontello Icon Font (generiert auf fontello.com) -->
+    <link rel="stylesheet" href="fontello/css/fontello.css"/>
 
-                <ul class="menu-left">
-                    <li class="go-back">
-                        <a href="#">
-                            <i class="icon-left-open"></i>
-                            <span class="page-name">Wunschliste</span>
-                        </a>
-                    </li>
-                    <li class="dont-go-back hidden">
-                        <span class="page-name">Wunschliste</span>
-                    </li>
-                    <li class="toggle-menu small-screen-only">
-                        <a href="#">
-                            <i class="icon-menu"></i>
-                        </a>
-                    </li>
-                </ul>
+    <!-- Stylesheets zur Gestaltung einzelner HTML-Elemente -->
+    <link rel="stylesheet" href="elements/button.css"/>
+    <link rel="stylesheet" href="elements/tab-buttons.css"/>
+    <link rel="stylesheet" href="elements/form.css"/>
 
-                <!-- Übergreifendes App-Menü -->
-                <ul class="menu-right small-screen-hidden">
-                    <li>
-                        <a href="#/profile">
-                            <i class="icon-user"></i>
-                            <span class="small-screen-only">
+    <script>
+        window.addEventListener("load", () => {
+            let app = new App();
+            app.run();
+        });
+    </script>
+
+    <!-- Dynamisch nachgeladene Stylesheets der App-Unterseiten -->
+    <style id="page-css"></style>
+</head>
+<body>
+
+<!-- Kopfbereich der App -->
+<header>
+    <nav>
+        <!-- Logo, Zurück-Button und Titel der Seite -->
+
+        <ul class="menu-left">
+            <li class="go-back">
+                <a href="#">
+                    <i class="icon-left-open"></i>
+                    <span class="page-name">Wunschliste</span>
+                </a>
+            </li>
+            <li class="dont-go-back hidden">
+                <span class="page-name">Wunschliste</span>
+            </li>
+            <li class="toggle-menu small-screen-only">
+                <a href="#">
+                    <i class="icon-menu"></i>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Übergreifendes App-Menü -->
+        <ul class="menu-right small-screen-hidden">
+            <li>
+                <a href="#/profile">
+                    <i class="icon-user"></i>
+                    <span class="small-screen-only">
                                 Benutzerprofil
                             </span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-            <div class="content">
-                Wunschübersicht
-            </div>
-        </header>
+    <div class="content">
+        Wunschübersicht
+    </div>
+</header>
 
-        <!-- Hauptbereich mit dem Inhalt der einzelnen Seiten -->
-        <main id="app-main-area">
-        Hallo
+<!-- Hauptbereich mit dem Inhalt der einzelnen Seiten -->
+<main id="app-main-area">
+    
+    <div class="content">
+        <form id="add-Wünsche-form"></form>
+        <ul id="Wünsche-list"></ul>
+    </div>
 
-        </main>
-    </body>
+</main>
+
+</body>
+
+
 </html>

@@ -4,6 +4,8 @@ class App {
     // database = new Database();
     // halloString = "Hallo, Welt!";
 
+
+
     constructor() {
         this.database = new Database();
     }
