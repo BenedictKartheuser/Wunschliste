@@ -1,15 +1,11 @@
 Vorlesung Webprogrammierung, Wirtschaftinformatik DHBW Karlsruhe
 
-Seite 1: Wunschliste
+Seite 1: Wunschliste - Tim
 (Wünsche als Kachelliste)
 
-Seite 2: History
-(erfüllte Wünsche als Kachelliste)
+Seite 2: Wunsch Hinzufügen - Benedict
 
-Seite 3: Hilfe Seite
-(Informationen wie die Seite funktioniert)
-
-Seite 4: Login Seite
+Seite 3: History - Janik
 
 Tim Eberitzsch aka the Flash
 Janik Rapp
