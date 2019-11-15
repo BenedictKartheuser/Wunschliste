@@ -4,6 +4,7 @@ input[type=text], select, textarea {
   padding: 12px; /* Some padding */
   border: 2px solid #ccc; /* Gray border */
   border-radius: 2px; /* Rounded borders */
+  border-color: #f011a9;
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 8px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
@@ -24,34 +25,35 @@ input[type=range] {
 input[type=number] {
   width: 100%; /* Full width */
   padding: 12px; /* Some padding */
-  padding: 16px
+  border-color: #f011a9;
   margin-top: 8px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
 }
 
 input[type=checkbox] {
   width: 5%; /* Full width */
   padding: 12px; /* Some padding */
-  padding: 16px;
   margin-top: 8px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
 }
 
 /* Style the submit button with a specific background color etc */
-input[type=hinzufügen] {
-  float: left;
+input[type=button] {
+
+  width: 100%;
   padding: 16px;
-  background-color: #4CAF50;
+  background-color: #f011a9;
   color: white;
-  padding: 12px 20px;
   border: none;
   border-radius: 4px;
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
   cursor: pointer;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-input[type=hinzufügen]:hover {
-  background-color: #45a049;
+input[type=button]:hover {
+  background-color: #bd0b84;
 }
 
 /* Add a background color and some padding around the form */
