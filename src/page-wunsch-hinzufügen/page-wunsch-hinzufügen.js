@@ -1,4 +1,4 @@
-class WunschHinzufügen {
+class WunschHinzufuegen {
     constructor(app) {
         this._app = app;
     }
@@ -17,39 +17,44 @@ class WunschHinzufügen {
         let pageDom = document.createElement("div");
         pageDom.innerHTML = html;
 
+        var slider = pageDom.querySelector("#wochen");
+        var output = pageDom.querySelector("#wochenanzahl");
+        output.innerHTML = slider.value;
+
+        slider.oninput = () => {
+          output.innerHTML = slider.value;
+        };
+
+        var hinzufügen = pageDom.querySelector("#hinzufügen");
+        hinzufügen.disabled = true;
+
+        var wunschtitel = pageDom.querySelector("#wunschtitel");
+        var wunschbeschreibung = pageDom.querySelector("#wunschbeschreibung");
+        var preis = pageDom.querySelector("#preis");
+        var wichtig = pageDom.querySelector("#wichtig");
+
+        wunschtitel.onchange = () => {
+            this.checkButtonStatus();
+        };
+
+        preis.onchange = () => {
+            this.checkButtonStatus();
+        };
+
+        hinzufügen.onclick = () => {
+            wunschtitel.value="";
+            wunschbeschreibung.value="";
+            slider.value = 10;
+            output.innerHTML = slider.value;
+            preis.value="";
+            wichtig.checked = false;
+        };
+
         this._app.setPageCss(css);
         this._app.setPageContent(pageDom.querySelector("main"));
     }
 
-    var slider = document.getElementById("wochen");
-    var output = document.getElementById("wochenanzahl");
-    output.innerHTML = slider.value;
-
-    var hinzufügen = document.getElementById("hinzufügen");
-    hinzufügen.disabled = false;
-
-    var wunschtitel = document.getElementById("wunschtitel");
-    var wunschbeschreibung = document.getElementById("wunschbeschreibung");
-    var preis = document.getElementById("preis");
-    var wichtig = document.getElementById("wichtig");
-
-    slider.oninput = function() {
-      output.innerHTML = this.value;
-    }
-
-    function checkButtonStatus() {
-    alert('here');
-    	if(wunschtitel.textContent != "" && preis.textContent != "") {
-      	hinzufügen.disabled = false;
-      }
-    }
-
-    function inputZurücksetzen() {
-    		alert('Enabled!');
-        wunschtitel.innerHTML="";
-        wunschbeschreibung.innerHTML="";
-        wochen.value = 10;
-        preis.innerHTML="";
-        wichtig.checked = false;
+    checkButtonStatus() {
+        hinzufügen.disabled = (preis.value == "0" || wunschtitel.value == "");
     }
 }

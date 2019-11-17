@@ -1,24 +1,23 @@
-<div class="container">
+<main class="container">
   <form action="action_page.php">
 
     <label for="wunschtitel">Wunsch-Titel <label style="color:#f011a9">✳</label></label>
     <input type="text" id="wunschtitel" placeholder="Bezeichnung deines Wunsches.."
     onchange="checkButtonStatus()">
 
-    <label for="beschreibung">Wunschbeschreibung</label>
-    <input type="text" id="beschreibung" placeholder="Kurze beschreibung deines Wunsches.. (optional)">
+    <label for="wunschbeschreibung">Wunschbeschreibung</label>
+    <input type="text" id="wunschbeschreibung" placeholder="Kurze beschreibung deines Wunsches.. (optional)">
 
     <label for="wochen">Wochen bis Wunscherfüllung: <span id="wochenanzahl"></span>
     <label style="color:#f011a9">✳</label></label>
     <input id="wochen" type="range" min="0" max="260" value="10">
 
     <label for="preis">Preis in € <label style="color:#f011a9">✳</label></label>
-    <input type="number" id="preis" value="0" min="0" max="1000000" placeholder="Preis"
-    onchange="checkButtonStatus()">
+    <input type="number" id="preis" value="0" min="0" max="1000000" placeholder="Preis">
 
     <input type="checkbox" id="wichtig">Besonders dringlicher Wunsch
 
-    <input id="hinzufügen" type="button" onclick="inputZurücksetzen()" value="Wunsch Hinzufügen">
+    <input id="hinzufügen" type="button" value="Wunsch Hinzufügen">
 
   </form>
-</div>
+</main>

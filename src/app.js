@@ -3,15 +3,15 @@ class App {
     constructor(pages) {
         this._pages = pages;
         this._currentPageObject = null;
-        this.database = new Database();
+        //this.database = new Database();
     }
 
     run() {
-        window.addEventListener("hashchange", () => this._handleRounting());
-        this._handleRounting();
+        window.addEventListener("hashchange", () => this._handleRouting());
+        this._handleRouting();
     }
 
-    _handleRounting() {
+    _handleRouting() {
         let pageUrl = location.hash.slice(1);
 
         if (pageUrl.length === 0) {
@@ -20,7 +20,6 @@ class App {
 
         let matches = null;
         let page = this._pages.find(p => matches = pageUrl.match(p.url));
-
         if (!page) {
             console.error(`Keine Seite zur URL ${pageUrl} gefunden!`);
             return;
