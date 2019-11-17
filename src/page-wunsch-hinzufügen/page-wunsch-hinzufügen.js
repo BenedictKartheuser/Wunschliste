@@ -42,12 +42,18 @@ class WunschHinzufuegen {
         };
 
         hinzufügen.onclick = () => {
-            wunschtitel.value="";
-            wunschbeschreibung.value="";
-            slider.value = 10;
-            output.innerHTML = slider.value;
-            preis.value="";
-            wichtig.checked = false;
+          let wunsch = {
+            titel: wunschtitel.value,
+            beschreibung: wunschbeschreibung.value,
+          };
+          console.log(wunsch);
+          this._app.database.saveWunsch(wunsch);
+          wunschtitel.value="";
+          wunschbeschreibung.value="";
+          slider.value = 10;
+          output.innerHTML = slider.value;
+          preis.value="";
+          wichtig.checked = false;
         };
 
         this._app.setPageCss(css);

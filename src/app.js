@@ -3,7 +3,7 @@ class App {
     constructor(pages) {
         this._pages = pages;
         this._currentPageObject = null;
-        //this.database = new Database();
+        this.database = new Database();
     }
 
     run() {

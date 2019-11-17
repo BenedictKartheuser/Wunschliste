@@ -31,6 +31,10 @@ class Database {
 
     }
 
+    async saveWunsch(neuerWunsch) {
+      this._wuensche.add(neuerWunsch);
+    }
+
     async selectAllWuensche(){
         let result = await this._wuensche.orderBy("Name").get();
         let Wuensche = [];
