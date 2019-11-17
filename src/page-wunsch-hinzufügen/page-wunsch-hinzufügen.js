@@ -33,7 +33,6 @@ class WunschHinzufügen {
     var preis = document.getElementById("preis");
     var wichtig = document.getElementById("wichtig");
 
-
     slider.oninput = function() {
       output.innerHTML = this.value;
     }
