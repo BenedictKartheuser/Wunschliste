@@ -27,8 +27,19 @@ class Database {
         });
         // Initialize Firebase
         this._db = firebase.firestore();
-        this._wünsche = this._db.collection("Wünsche");
+        this._wuensche = this._db.collection('Wuensche');
 
+    }
+
+    async selectAllWuensche(){
+        let result = await this._wuensche.orderBy("Name").get();
+        let Wuensche = [];
+
+        result.forEach(entry => {
+            let wunsch = entry.data();
+            Wuensche.push(wunsch);
+        })
+        return Wuensche;
     }
 
     /**

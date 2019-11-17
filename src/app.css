@@ -69,6 +69,7 @@ body {
 header {
     --text-color: white;
     --icon-color: rgb(0, 90, 115);
+    background: #0088cc;
 }
 
 /* Anpassung an große Bildschirme */
