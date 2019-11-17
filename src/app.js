@@ -30,6 +30,10 @@ class App {
         this._currentPageObject.show(matches);
     }
 
+    setPageCss(css) {
+        document.querySelector("#page-css").innerHTML = css;
+    }
+
     setPageContent(element) {
         let container = document.querySelector("#app-main-area");
         container.innerHTML = "";

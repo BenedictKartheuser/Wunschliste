@@ -55,14 +55,29 @@
     <link rel="stylesheet" href="elements/tab-buttons.css"/>
     <link rel="stylesheet" href="elements/form.css"/>
 
+    <!-- Anwendung starten -->
     <script>
         window.addEventListener("load", () => {
-            let app = new App();
+            let pages = [{
+                url: "^/$",
+                klass: Wunschübersicht,
+            },{
+                url: "^/WunschHinzufuegen/(.*)$",
+                klass: WunschHinzufügen,
+            },{
+                url: "^/History/(.*)$",
+                klass: History,
+            },{
+                url: ".*",
+                klass: PageNotFound,
+            }];
+
+            let app = new App(pages);
             app.run();
         });
     </script>
 
-    <!-- Dynamisch nachgeladene Stylesheets der App-Unterseiten -->
+        <!-- Dynamisch nachgeladene Stylesheets der App-Unterseiten -->
     <style id="page-css"></style>
 </head>
 <body>
@@ -74,16 +89,18 @@
             <span class="page-name">Wunschlisten-App</span>
         </ul>
     </nav>
-</header>
-    <!-- Hauptbereich mit dem Inhalt der einzelnen Seiten -->
-    <main id="app-main-area">
-        <div id="sidenav" class="sidenavigation">
-          <a href="#">Wunschliste</a>
-          <a href="#">Neuer Wunsch</a>
-          <a href="#">History</a>
-        </div>
-        <!-- Hauptbereich mit dem Inhalt der einzelnen Seiten -->
 
+    <div id="sidenav" class="sidenavigation">
+      <a href="#">Wunschliste</a>
+      <a href="#">Neuer Wunsch</a>
+      <a href="#">History</a>
+    </div>
+
+</header>
+
+
+    <main id="app-main-area">
+            Inhalt des Hauptbereichs
     </main>
 
 </body>

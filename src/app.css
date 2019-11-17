@@ -60,11 +60,6 @@ body {
     display: none !important;
 }
 
-
-/*
- * KOPFBEREICH
- */
-
 /* Allgemeine Darstellung der Menüzeile */
 header {
     --text-color: white;
@@ -91,41 +86,33 @@ header {
         padding-right: var(--content-padding);
     }
 
-    header nav,
-    header nav .menu-right {
-        display: flex;
-    }
-
-    header nav .menu-right li {
-        padding-left: var(--content-padding);
-    }
-
-    header nav .menu-left {
-        flex: 1;
-    }
-}
-
 .sidenavigation {
-  height: 80%;
-  width: 240px;
-  position: relative;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #ffffff;
-  overflow-x: hidden;
-  transition: 0.5s;
+	position: relative;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+	width: auto;
+	height: 50px;
+	background-color: #ffffff;
+	border-radius: 8px;
+    border-color: #f011a9;
+	font-size: 0;
 }
 
 .sidenavigation a {
-  position: relative;
-  padding: 16px 8px 0px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #f011a9;
-  display: block;
-  transition: 0.3s;
+	line-height: 50px;
+    padding-left: 20px;
+	height: 100%;
+	font-size: 20px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-align: center;
+	color: #f011a9;
+	cursor: pointer;
 }
+
 
 .sidenavigation a:hover {
   color: #bd0b84;
