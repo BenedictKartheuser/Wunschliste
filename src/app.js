@@ -1,12 +1,46 @@
 class App {
 
-    constructor() {
+    constructor(pages) {
+        this._pages = pages;
+        this._currentPageObject = null;
         this.database = new Database();
     }
 
     run() {
-        // Inhalt der ersten Seite darstellen
-        let page = new PageOverview(this);
-        page.show();
+        window.addEventListener("hashchange", () => this._handleRounting());
+        this._handleRounting();
+    }
+
+    _handleRounting() {
+        let pageUrl = location.hash.slice(1);
+
+        if (pageUrl.length === 0) {
+            pageUrl = "/";
+        }
+
+        let matches = null;
+        let page = this._pages.find(p => matches = pageUrl.match(p.url));
+
+        if (!page) {
+            console.error(`Keine Seite zur URL ${pageUrl} gefunden!`);
+            return;
+        }
+
+        this._currentPageObject = new page.klass(this);
+        this._currentPageObject.show(matches);
+    }
+
+    setPageContent(element) {
+        let container = document.querySelector("#app-main-area");
+        container.innerHTML = "";
+
+        if (!element) return;
+        let len = element.childNodes.length;
+
+        for (var i = 0; i < len; i++) {
+            let child = element.childNodes[0];
+            element.removeChild(child);
+            container.appendChild(child);
+        }
     }
 }
