@@ -17,21 +17,21 @@ class WunschHinzufuegen {
         let pageDom = document.createElement("div");
         pageDom.innerHTML = html;
 
-        var slider = pageDom.querySelector("#wochen");
-        var output = pageDom.querySelector("#wochenanzahl");
+        let slider = pageDom.querySelector("#wochen");
+        let output = pageDom.querySelector("#wochenanzahl");
         output.innerHTML = slider.value;
 
         slider.oninput = () => {
           output.innerHTML = slider.value;
         };
 
-        var hinzufügen = pageDom.querySelector("#hinzufügen");
+        let hinzufügen = pageDom.querySelector("#hinzufügen");
         hinzufügen.disabled = true;
 
-        var wunschtitel = pageDom.querySelector("#wunschtitel");
-        var wunschbeschreibung = pageDom.querySelector("#wunschbeschreibung");
-        var preis = pageDom.querySelector("#preis");
-        var wichtig = pageDom.querySelector("#wichtig");
+        let wunschtitel = pageDom.querySelector("#wunschtitel");
+        let wunschbeschreibung = pageDom.querySelector("#wunschbeschreibung");
+        let preis = pageDom.querySelector("#preis");
+        let wichtig = pageDom.querySelector("#wichtig");
 
         wunschtitel.onchange = () => {
             this.checkButtonStatus();
@@ -45,8 +45,11 @@ class WunschHinzufuegen {
           let wunsch = {
             titel: wunschtitel.value,
             beschreibung: wunschbeschreibung.value,
+            wochen: slider.value,
+            preis: preis.value,
+            wichtig: wichtig.checked
           };
-          console.log(wunsch);
+
           this._app.database.saveWunsch(wunsch);
           wunschtitel.value="";
           wunschbeschreibung.value="";
