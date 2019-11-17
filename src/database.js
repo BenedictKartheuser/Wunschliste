@@ -14,65 +14,21 @@ class Database {
      * Konstruktor.
      */
     constructor() {
-        this._data = [
-            {
-                id:          1,
-                img:        "boats/1.jpg",
-                name:       "Petrine",
-                typ:        "Ewer",
-                stapellauf: 1909,
-                verbleib:   "In Fahrt",
-                link:       "https://de.wikipedia.org/wiki/Petrine",
-            },{
-                id:          2,
-                img:        "boats/2.jpg",
-                name:       "Falado",
-                typ:        "Brigatine",
-                stapellauf: 1968,
-                verbleib:   "Westlich von Island gesunken",
-                link:       "https://de.wikipedia.org/wiki/Falado_von_Rhodos",
-            },{
-                id:          3,
-                img:        "boats/3.jpg",
-                name:       "Gorch Fock",
-                typ:        "Segelschiff",
-                stapellauf: 1958,
-                verbleib:   "In Fahrt",
-                link:       "https://de.wikipedia.org/wiki/Gorch_Fock_(Schiff,_1958)",
-            },{
-                id:          4,
-                img:        "boats/4.jpg",
-                name:       "Mare Frisium",
-                typ:        "Dreimastmarstoppsegelschoner",
-                stapellauf: 1916,
-                verbleib:   "In Fahrt",
-                link:       "https://de.wikipedia.org/wiki/Mare_Frisium",
-            },{
-                id:          5,
-                img:        "boats/5.jpg",
-                name:       "Preußen",
-                typ:        "Frachtsegler",
-                stapellauf: 1902,
-                verbleib:   "Kollision im Ärmelkanal",
-                link:       "https://de.wikipedia.org/wiki/Preu%C3%9Fen_(Schiff,_1902)",
-            },{
-                id:          6,
-                img:        "boats/6.jpg",
-                name:       "HMS Victory",
-                typ:        "Linienschiff",
-                stapellauf: 1765,
-                verbleib:   "Museum im Portsmouth",
-                link:       "https://de.wikipedia.org/wiki/HMS_Victory",
-            },{
-                id:          7,
-                img:        "boats/7.jpg",
-                name:       "Schulschiff Deutschland",
-                typ:        "Segelschulschiff",
-                stapellauf: 1927,
-                verbleib:   "Kulturdenkmal in Bremen-Vegesack",
-                link:       "https://de.wikipedia.org/wiki/Schulschiff_Deutschland",
-            },
-        ];
+
+        firebase.initializeApp( {
+            apiKey: "AIzaSyDCN9B8__bNcwa4svqJ3jxd1aqSTxyzZAw",
+            authDomain: "wunschliste-f5526.firebaseapp.com",
+            databaseURL: "https://wunschliste-f5526.firebaseio.com",
+            projectId: "wunschliste-f5526",
+            storageBucket: "wunschliste-f5526.appspot.com",
+            messagingSenderId: "101191923300",
+            appId: "1:101191923300:web:bcbce78d4ea1b7cb4a5171",
+            measurementId: "G-MPBZKMKM93"
+        });
+        // Initialize Firebase
+        this._db = firebase.firestore();
+        this._wünsche = this._db.collection("Wünsche");
+
     }
 
     /**
