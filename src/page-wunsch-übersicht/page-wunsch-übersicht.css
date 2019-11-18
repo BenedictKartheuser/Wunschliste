@@ -1,9 +1,20 @@
 
-<<<<<<< HEAD
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  border-color: #f011a9;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  resize: vertical
+}
+
 input[type=range] {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border: 2px solid #f011a9; /* Gray border */
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #f011a9;
   border-radius: 2px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 8px; /* Add a top margin */
@@ -58,9 +69,6 @@ input[type=button]:hover {
     background: rgba(250, 250, 250);
     padding: 0.5em;
     margin: 0.5em;
-
     transition: transform 0.5s, background 0.5s;
     transform: scale(1);
 }
-=======
->>>>>>> f93e85701f7562ec25724eca0fb57d7e4ee60692
