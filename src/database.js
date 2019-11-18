@@ -28,7 +28,6 @@ class Database {
         // Initialize Firebase
         this._db = firebase.firestore();
         this._wuensche = this._db.collection('Wuensche');
-
     }
 
     async saveWunsch(neuerWunsch) {

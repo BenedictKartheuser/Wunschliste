@@ -8,41 +8,14 @@ input[type=text], select, textarea {
   box-sizing: border-box;
   margin-top: 8px;
   margin-bottom: 16px;
-  resize: vertical
-}
-
-input[type=range] {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #f011a9;
-  border-radius: 2px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 8px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-
-input[type=number] {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border-color: #f011a9;
-  margin-top: 8px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-}
-
-input[type=checkbox] {
-  width: 5%; /* Full width */
-  padding: 12px; /* Some padding */
-  margin-top: 8px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical;
+  pointer-events: none
 }
 
 /* Style the submit button with a specific background color etc */
 input[type=button] {
 
-  width: 100%;
-  padding: 16px;
+  padding: 8px;
   background-color: #f011a9;
   color: white;
   border: none;
@@ -63,6 +36,7 @@ input[type=button]:hover {
   padding: 20px;
 }
 .tile {
+    width: 100%
     display: inline-block;
 
     border: 1px solid lightgrey;

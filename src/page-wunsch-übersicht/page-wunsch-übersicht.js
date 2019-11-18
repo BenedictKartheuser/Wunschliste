@@ -41,6 +41,7 @@ class Wunschübersicht {
 
             mainElement.innerHTML += html;
             console.log(mainElement);
+
         }
       }
 
