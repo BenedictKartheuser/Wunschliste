@@ -33,11 +33,12 @@ class Wunschübersicht {
         wünsche = await this._app.database.selectAllWuensche();
         for(var wunsch of wünsche) {
             let html = templateElement.innerHTML;
-            console.log(wunsch);
             html = html.replace("{title}", wunsch.titel);
             html = html.replace("{price}", wunsch.preis);
             html = html.replace("{detail}", wunsch.beschreibung);
-            console.log(html);
+            html = html.replace("{weeks}", wunsch.wochen);
+            html = html.replace("{important}", wunsch.wichtig);
+
             mainElement.innerHTML += html;
             console.log(mainElement);
         }
