@@ -36,7 +36,7 @@ class Database {
     }
 
     async selectAllWuensche(){
-        let result = await this._wuensche.orderBy("titel").get();
+        let result = await this._wuensche.orderBy("wichtig").get();
         let Wuensche = [];
 
         result.forEach(docs => {
