@@ -39,10 +39,12 @@ class Database {
         let result = await this._wuensche.orderBy("Name").get();
         let Wuensche = [];
 
-        result.forEach(entry => {
-            let wunsch = entry.data();
+        result.forEach(docs => {
+            let wunsch = docs.data();
+            console.log(docs.data());
             Wuensche.push(wunsch);
         })
+        console.log(Wuensche);
         return Wuensche;
     }
 
