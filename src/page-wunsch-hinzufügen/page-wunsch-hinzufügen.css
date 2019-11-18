@@ -1,20 +1,19 @@
-/* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border: 2px solid #ccc; /* Gray border */
-  border-radius: 2px; /* Rounded borders */
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
   border-color: #f011a9;
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 8px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  resize: vertical
 }
 
 input[type=range] {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border: 2px solid #f011a9; /* Gray border */
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #f011a9;
   border-radius: 2px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 8px; /* Add a top margin */
